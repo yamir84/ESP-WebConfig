@@ -10,4 +10,8 @@ Licencia: Open Software.
 Cuba Electrónica IoT
 07/2020
 
+![01](https://user-images.githubusercontent.com/47259596/88466517-2d17ab00-ce9b-11ea-812b-b9816d28ba2d.png)
+![02](https://user-images.githubusercontent.com/47259596/88466520-356fe600-ce9b-11ea-97f1-d9706f05e5b4.png)
+![Sin título](https://user-images.githubusercontent.com/47259596/88466521-3e60b780-ce9b-11ea-9e15-841ba456fbdf.png)
+
  
