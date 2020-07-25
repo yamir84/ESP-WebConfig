@@ -1,0 +1,119 @@
+<!--
+  Website : www.cubaelectronica.com
+  Author : Ing. Yamir Hidalgo Peña
+  Arduino Board : ESP-32 | ESP8266  
+  Project name : WebConfig
+  Project code : SW20LP20CE07
+  Project Homepage : www.cubaelectronica.com
+  Project Version : 0.1.0 Dev [SW-WC20LP20CE07]
+  Project Description : Configurador WEB para dispositivos IOT basados en ESP Series.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>ESP WebConfig | Reboot</title>
+<meta http-equiv="Content-Type" content="text/html; ISO-8859-1">
+<META NAME="DC.Language" SCHEME="RFC1766" CONTENT="Spanish">
+<META NAME="AUTHOR" CONTENT="CubaElectronica">
+<META NAME="REPLY-TO" CONTENT="admin@cubaelectronica.com">
+<LINK REV="made" href="mailto:admin@cubaelectronica.com">
+<META NAME="DESCRIPTION"
+  CONTENT="WebConfig página embebida para la configuración de dispositivos de la familia ESP8266 y ESP32">
+<META NAME="KEYWORDS"
+  CONTENT="ESP32,IOT,programación,MQTT,cursos,cubaelectronica,internet,de,las,cosas,Ardiono,Youtube">
+<META NAME="Resource-type" CONTENT="HOWTO">
+<META NAME="DateCreated" CONTENT="Wed, 1 April 2020 00:00:00 GMT-4">
+<META NAME="Revisit-after" CONTENT="1 days">
+<META NAME="robots" content="ALL">
+<!-- Favicon icon icono que sale en la web-->
+<link rel="icon" href="./assets/logo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="./assets/docs.min.css">
+
+  
+
+  <script>
+    var t = 15;
+
+    function decT() {
+      t--;
+      document.getElementById("time").innerHTML = " " + t;
+      if (t == 0) {
+        window.location = "/";
+      } else {
+        window.setTimeout("decT()", 1000);
+      }
+    }
+  </script>
+
+</head>
+
+<body class="dark" onLoad="decT()">
+
+<header id="site-header">
+  <a class="logo-link" href="."><span class="text-label text-red-d2">ESP WebConfig v0.1.0</span></a>
+
+</header>
+
+<div id="top" class="content-wrap">
+  
+
+<div id="nav-pane">
+  <nav id="sidenav" class="sticky">
+
+      <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="config">Configuración</a></li>
+          <li><a href="reconfig" onclick="return confirm('Reconfigurar módulo?')">Restaurar</a></li>
+          <li class="active"><a href="reboot" onclick="return confirm('Reiniciar módulo?')">Reiniciar</a></li>
+      </ul>
+
+  </nav>
+</div>
+
+<div id="content-pane">
+  <div class="container stretch limit-width">
+    <section>
+      
+
+<div class="section-header">
+    <h2>Reiniciando el Dispositivo.</h2>
+</div>
+
+    <div class="demo-panel p-15" id="table-demo" data-toggle-bg="toggle">
+
+      <h3>
+      <table>
+        <tr style="height: 150px;">
+          <th style="width: 25%;"></th>
+          <td><span id="time">--</span> segundos</td>
+        </tr>
+      </table>
+      </h3>
+
+    </div>
+   </section>
+  </div><!-- container end -->
+</div>
+
+</div>
+
+<footer id="site-footer" class="stretch">
+    <p class="petal-ver">
+        SW-CEdev2020<br>
+        <b> v0.1.0</b></p>
+
+    <div class="footer-credits">
+        <p>ESP WebConfig <a href="https://cubaelectronica.com">Documentación</a><br>
+        ©2020 <a href="https://cubaelectronica.com"> CubaElectronica</a> todos los derechos reservados.</p>
+    </div>
+</footer>
+
+</body>
+
+
+</html>

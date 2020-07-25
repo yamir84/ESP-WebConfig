@@ -1,0 +1,165 @@
+<!--
+  Website : www.cubaelectronica.com
+  Author : Ing. Yamir Hidalgo Peña
+  Arduino Board : ESP-32 | ESP8266  
+  Project name : WebConfig
+  Project code : SW20LP20CE07
+  Project Homepage : www.cubaelectronica.com
+  Project Version : 0.1.0 Dev [SW-WC20LP20CE07]
+  Project Description : Configurador WEB para dispositivos IOT basados en ESP Series.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ESP WebConfig | Config</title>
+  <meta http-equiv="Content-Type" content="text/html; ISO-8859-1">
+  <META NAME="DC.Language" SCHEME="RFC1766" CONTENT="Spanish">
+  <META NAME="AUTHOR" CONTENT="CubaElectronica">
+  <META NAME="REPLY-TO" CONTENT="admin@cubaelectronica.com">
+  <LINK REV="made" href="mailto:admin@cubaelectronica.com">
+  <META NAME="DESCRIPTION"
+    CONTENT="WebConfig página embebida para la configuración de dispositivos de la familia ESP8266 y ESP32">
+  <META NAME="KEYWORDS"
+    CONTENT="ESP32,IOT,programación,MQTT,cursos,cubaelectronica,internet,de,las,cosas,Ardiono,Youtube">
+  <META NAME="Resource-type" CONTENT="HOWTO">
+  <META NAME="DateCreated" CONTENT="Wed, 1 April 2020 00:00:00 GMT-4">
+  <META NAME="Revisit-after" CONTENT="1 days">
+  <META NAME="robots" content="ALL">
+  <!-- Favicon icon icono que sale en la web-->
+  <link rel="icon" href="./assets/logo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="./assets/docs.min.css">
+
+  
+</head>
+
+<body class="dark">
+
+<header id="site-header">
+  <a class="logo-link" href="."><span class="text-label text-red-d2">ESP WebConfig v0.1.0</span></a>
+
+</header>
+
+<div id="top" class="content-wrap">
+  
+
+<div id="nav-pane">
+  <nav id="sidenav" class="sticky">
+
+      <ul>
+          <li><a href="/">Inicio</a></li>
+          <li class="active"><a href="config">Configuración</a></li>
+          <li><a href="reconfig" onclick="return confirm('Reconfigurar módulo?')">Restaurar</a></li>
+          <li><a href="reboot" onclick="return confirm('Reiniciar módulo?')">Reiniciar</a></li>
+      </ul>
+
+  </nav>
+</div>
+
+<div id="content-pane">
+  <div class="container stretch limit-width">
+    <section>
+      
+
+<div class="section-header">
+    <h2>Configuración del Dispositivo.</h2>
+</div>
+
+<div class="demo-panel p-15" id="table-demo" data-toggle-bg="toggle">
+
+  <form class="form-horizontal" name="config" action="configSave" method="post">
+  <div class="form-group">
+    <div class="col-5">
+      <label class="form-label" for="demoFormHorizontalEmail">Identificación</label>
+    </div>
+    <div class="col-5 colspan-4">
+      <input class="input" name="id" value="#id#" type="text" placeholder="Identificación" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-5">
+      <label class="form-label" for="demoFormHorizontalPassword">SSID:</label>
+    </div>
+    <div class="col-5 colspan-4">
+      <input class="input" name="ssid" value="#ssid#" type="text" placeholder="WIFI SSID" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-5">
+      <label class="form-label" for="demoFormHorizontalPassword">Contraseña</label>
+    </div>
+    <div class="col-5 colspan-4">
+      <input class="input" name="pw" type="password" placeholder="Contraseña" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-5">
+      <label class="form-label" for="demoFormHorizontalPassword">LED</label>
+    </div>
+    <div class="col-5 colspan-4">
+      <br>
+      <input type="radio" name="led" value="1"#ledOn#> ON &nbsp;&nbsp;
+      <input type="radio" name="led" value="0"#ledOff#> OFF
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-5">
+      <label class="form-label" for="demoFormHorizontalPassword">MQTT Server</label>
+    </div>
+    <div class="col-5 colspan-4">
+      <input class="input" name="mqttserver" value="#mqttserver#" type="text" placeholder="MQTT Server" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-5">
+      <label class="form-label" for="demoFormHorizontalPassword">MQTT User Broker</label>
+    </div>
+    <div class="col-5 colspan-4">
+      <input class="input" name="mqttuser" value="#mqttuser#" type="text" placeholder="MQTT User Broker" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-5">
+      <label class="form-label" for="demoFormHorizontalPassword">MQTT User Password</label>
+    </div>
+    <div class="col-5 colspan-4">
+      <input class="input" name="mqttpass" type="password" placeholder="MQTT User Password" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-5">
+    </div>
+    <div class="col-5 colspan-4">
+    <input id="save" class="btn red" type="submit" value="Guardar" onClick="return confirm('Grabar a configuración?')">
+    </div>
+  </div>
+  </form>
+  </div>
+    <div class="section-footer">
+      <a href="#top"><i class="petalicon petalicon-chevron-up"></i>Inicio</a>
+    </div>
+  </section>
+  </div><!-- container end -->
+</div>
+
+</div>
+
+<footer id="site-footer" class="stretch">
+    <p class="petal-ver">
+        SW-CEdev2020<br>
+        <b> v0.1.0</b></p>
+
+    <div class="footer-credits">
+        <p>ESP WebConfig <a href="https://cubaelectronica.com">Documentación</a><br>
+        ©2020 <a href="https://cubaelectronica.com"> CubaElectronica</a> todos los derechos reservados.</p>
+    </div>
+</footer>
+
+</body>
+
+
+</html>
